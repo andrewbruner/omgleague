@@ -10,124 +10,159 @@
 			h1, h2 {
 				text-align: center;
 			}
-			.todo {
-				font-style: italic;
+			.season div {
+				border-radius: 1rem;
+				padding: 0.5rem;
+			}
+			.season div:first-child {
+				background-color: #cdcdcd;
 			}
 			.done {
-				font-weight: normal;
+				background-color: #dfdfdf;
+			}
+			.current {
+				border: 1px solid black;
+			}
+			.todo {
+				list-style-type: circle;
+				font-style: italic;
 			}
 		</style>
 	</head>
 	<body>
-		<h1>OMG League</h1>
-		<h2>Tarkir: Dragonstorm (TDM)</h2>
-		<h3>Overall Standings</h3>
-		<ol>
-			<li>Andrew (4-2)</li>
-			<li>Jarrod (2-2)</li>
-			<li>Ben (2-3)</li>
-			<li value="3">Brian (2-3)</li>
-		</ol>
-		<h3>Round 1</h3>
-		<ul>
-			<li>Apr 17: Ben d Jarrod (2-0)</li>
-			<li>Apr 22: Brian d Andrew (2-1)</li>
-			<li>Apr 22: Ben d Brian (2-1)</li>
-			<li>Apr 28: Andrew d Ben (2-1)</li>
-			<li>May 9: Jarrod d Brian (2-0)</li>
-			<li>May 16: Andrew d Jarrod (2-1)</li>
-		</ul>
-		<h4>Round 1 Standings</h4>
-		<ol>
-			<li>Andrew (2-1)</li>
-			<li>Ben (2-1)</li>
-			<li>Jarrod (1-2) <em>+1 pack</em></li>
-			<li>Brian (1-2) <em>+1 pack</em></li>
-		</ol>
-		<h3>Round 2</h3>
-		<ul>
-			<li>May 18: Brian d Ben (2-0)</li>
-			<li>May 19: Jarrod d Andrew (2-1)</li>
-			<li>May 24: Andrew d Ben (2-1)</li>
-			<li>Jun 11: Andrew d Brian (2-0)</li>
-			<li><em>Ben v Jarrod</em></li>
-			<li><em>Brian v Jarrod</em></li>
-		</ul>
-		<h4>Round 2 Standings</h4>
-		<ol>
-			<li>Andrew (2-1)</li>
-			<li>Jarrod (1-0)</li>
-			<li>Brian (1-1)</li>
-			<li>Ben (0-2)</li>
-		</ol>
-		<h3>Round 3</h3>
-		<ul>
-			<li><em>Andrew v Ben</em></li>
-			<li><em>Andrew v Brian</em></li>
-			<li><em>Andrew v Jarrod</em></li>
-			<li><em>Ben v Brian</em></li>
-			<li><em>Ben v Jarrod</em></li>
-			<li><em>Brian v Jarrod</em></li>
-		</ul>
-		<h3>Round 4</h3>
-		<ul>
-			<li><em>Andrew v Ben</em></li>
-			<li><em>Andrew v Brian</em></li>
-			<li><em>Andrew v Jarrod</em></li>
-			<li><em>Ben v Brian</em></li>
-			<li><em>Ben v Jarrod</em></li>
-			<li><em>Brian v Jarrod</em></li>
-		</ul>
-		<h2>Final Fantasy (FIN)</h2>
-		<h3>Overall Standings</h3>
-		<ol>
-			<li>Ben (1-0)</li>
-			<li>Brian (0-0)</li>
-			<li value="2">Jarrod (0-0)</li>
-			<li value="4">Andrew (0-1)</li>
-		</ol>
-		<h3>Round 1</h3>
-		<ul>
-			<li>Jun 14: Ben d Andrew (2-0)</li>
-			<li><em>Andrew v Brian</em></li>
-			<li><em>Andrew v Jarrod</em></li>
-			<li><em>Ben v Brian</em></li>
-			<li><em>Ben v Jarrod</em></li>
-			<li><em>Brian v Jarrod</em></li>
-		</ul>
-		<h4>Round 1 Standings</h4>
-		<ol>
-			<li>Ben (1-0)</li>
-			<li>Brian (0-0)</li>
-			<li value="2">Jarrod (0-0)</li>
-			<li value="4">Andrew (0-1)</li>
-		</ol>
-		<h3>Round 2</h3>
-		<ul>
-			<li><em>Andrew v Ben</em></li>
-			<li><em>Andrew v Brian</em></li>
-			<li><em>Andrew v Jarrod</em></li>
-			<li><em>Ben v Brian</em></li>
-			<li><em>Ben v Jarrod</em></li>
-			<li><em>Brian v Jarrod</em></li>
-		</ul>
-		<h3>Round 3</h3>
-		<ul>
-			<li><em>Andrew v Ben</em></li>
-			<li><em>Andrew v Brian</em></li>
-			<li><em>Andrew v Jarrod</em></li>
-			<li><em>Ben v Brian</em></li>
-			<li><em>Ben v Jarrod</em></li>
-			<li><em>Brian v Jarrod</em></li>
-		</ul>
-		<h3>Round 4</h3>
-		<ul>
-			<li><em>Andrew v Ben</em></li>
-			<li><em>Andrew v Brian</em></li>
-			<li><em>Andrew v Jarrod</em></li>
-			<li><em>Ben v Brian</em></li>
-			<li><em>Ben v Jarrod</em></li>
-			<li><em>Brian v Jarrod</em></li>
-		</ul>
+		<div class="season">
+			<div>
+				<h1>OMG League</h1>
+				<h2>Tarkir: Dragonstorm (TDM)</h2>
+				<h3>Overall Standings</h3>
+				<ol>
+					<li>Andrew (4-2)</li>
+					<li>Jarrod (2-2)</li>
+					<li>Ben (2-3)</li>
+					<li value="3">Brian (2-3)</li>
+				</ol>
+			</div>
+			<div class="done">
+				<h3>Round 1</h3>
+				<ul>
+					<li>Apr 17: Ben d Jarrod (2-0)</li>
+					<li>Apr 22: Brian d Andrew (2-1)</li>
+					<li>Apr 22: Ben d Brian (2-1)</li>
+					<li>Apr 28: Andrew d Ben (2-1)</li>
+					<li>May 9: Jarrod d Brian (2-0)</li>
+					<li>May 16: Andrew d Jarrod (2-1)</li>
+				</ul>
+				<h4>Round 1 Standings</h4>
+				<ol>
+					<li>Andrew (2-1)</li>
+					<li>Ben (2-1)</li>
+					<li>Jarrod (1-2) <em>+1 pack</em></li>
+					<li>Brian (1-2) <em>+1 pack</em></li>
+				</ol>
+			</div>
+			<div class="current">
+				<h3>Round 2</h3>
+				<ul>
+					<li>May 18: Brian d Ben (2-0)</li>
+					<li>May 19: Jarrod d Andrew (2-1)</li>
+					<li>May 24: Andrew d Ben (2-1)</li>
+					<li>Jun 11: Andrew d Brian (2-0)</li>
+					<li class="todo">Ben v Jarrod</li>
+					<li class="todo">Brian v Jarrod</li>
+				</ul>
+				<h4>Round 2 Standings</h4>
+				<ol>
+					<li>Andrew (2-1)</li>
+					<li>Jarrod (1-0)</li>
+					<li>Brian (1-1)</li>
+					<li>Ben (0-2)</li>
+				</ol>
+			</div>
+			<div>
+				<h3>Round 3</h3>
+				<ul>
+					<li class="todo">Andrew v Ben</li>
+					<li class="todo">Andrew v Brian</li>
+					<li class="todo">Andrew v Jarrod</li>
+					<li class="todo">Ben v Brian</li>
+					<li class="todo">Ben v Jarrod</li>
+					<li class="todo">Brian v Jarrod</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Round 4</h3>
+				<ul>
+					<li class="todo">Andrew v Ben</li>
+					<li class="todo">Andrew v Brian</li>
+					<li class="todo">Andrew v Jarrod</li>
+					<li class="todo">Ben v Brian</li>
+					<li class="todo">Ben v Jarrod</li>
+					<li class="todo">Brian v Jarrod</li>
+				</ul>
+			</div>
+		</div>
+		<div class="season">
+			<div>
+				<h2>Final Fantasy (FIN)</h2>
+				<h3>Overall Standings</h3>
+				<ol>
+					<li>Ben (1-0)</li>
+					<li>Brian (0-0)</li>
+					<li value="2">Jarrod (0-0)</li>
+					<li value="4">Andrew (0-1)</li>
+				</ol>
+			</div>
+			<div class="current">
+				<h3>Round 1</h3>
+				<ul>
+					<li>Jun 14: Ben d Andrew (2-0)</li>
+					<li class="todo">Andrew v Brian</li>
+					<li class="todo">Andrew v Jarrod</li>
+					<li class="todo">Ben v Brian</li>
+					<li class="todo">Ben v Jarrod</li>
+					<li class="todo">Brian v Jarrod</li>
+				</ul>
+				<h4>Round 1 Standings</h4>
+				<ol>
+					<li>Ben (1-0)</li>
+					<li>Brian (0-0)</li>
+					<li value="2">Jarrod (0-0)</li>
+					<li value="4">Andrew (0-1)</li>
+				</ol>
+			</div>
+			<div>
+				<h3>Round 2</h3>
+				<ul>
+					<li class="todo">Andrew v Ben</li>
+					<li class="todo">Andrew v Brian</li>
+					<li class="todo">Andrew v Jarrod</li>
+					<li class="todo">Ben v Brian</li>
+					<li class="todo">Ben v Jarrod</li>
+					<li class="todo">Brian v Jarrod</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Round 3</h3>
+				<ul>
+					<li class="todo">Andrew v Ben</li>
+					<li class="todo">Andrew v Brian</li>
+					<li class="todo">Andrew v Jarrod</li>
+					<li class="todo">Ben v Brian</li>
+					<li class="todo">Ben v Jarrod</li>
+					<li class="todo">Brian v Jarrod</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Round 4</h3>
+				<ul>
+					<li class="todo">Andrew v Ben</li>
+					<li class="todo">Andrew v Brian</li>
+					<li class="todo">Andrew v Jarrod</li>
+					<li class="todo">Ben v Brian</li>
+					<li class="todo">Ben v Jarrod</li>
+					<li class="todo">Brian v Jarrod</li>
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>
