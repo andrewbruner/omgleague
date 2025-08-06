@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 			body {
@@ -12,10 +12,37 @@
 			h1, h2 {
 				text-align: center;
 			}
-			.season div {
-				border-radius: 1em;
-				margin-bottom: 1em;
-				padding: 0.5em;
+			nav ul {
+				display: flex;
+				gap: 0.5em;
+				justify-content: center;
+				list-style-type: none;
+				padding-left: 0;
+
+				li {
+					border: 1px solid black;
+					border-radius: 1em;
+					cursor: pointer;
+					padding: 0.125em 1em;
+					text-align: center;
+
+					&.active {
+						background-color: #dfdfdf;
+					}
+				}
+			}
+			.season {
+				display: none;
+
+				&.active {
+					display: block;
+				}
+
+				div {
+					border-radius: 1em;
+					margin-bottom: 1em;
+					padding: 0.5em;
+				}
 			}
 			.season div:first-child {
 				background-color: #cdcdcd;
@@ -59,7 +86,14 @@
 	</head>
 	<body>
 		<h1>OMG League</h1>
-		<div class="season">
+		<nav>
+			<ul>
+				<li class="active">TDM</li>
+				<li>FIN</li>
+				<li>EOE</li>
+			</ul>
+		</nav>
+		<div class="active season">
 			<div>
 				<h2>Tarkir: Dragonstorm (TDM)</h2>
 				<h3>Overall Standings</h3>
@@ -73,16 +107,24 @@
 				</ol>
 			</div>
 			<div class="done">
-				<h3>Round 1 — <small><em>Apr 17–May 16 (29 days)</em></small></h3>
+				<h3>
+					Round 1 — <small><em>Apr 17–May 16 (29 days)</em></small>
+				</h3>
 				<ul>
 					<li style="list-style-type: none;"><em>DATE: WINNER (RECORD) LOSER — POINTS</em></li>
 					<li style="list-style-type: none">&nbsp;</li>
 					<li>Apr 17: <span class="player ben">Ben</span> (2–0) <span class="player jarrod">Jarrod</span> — MP: 3–0</li>
-					<li>Apr 22: <span class="player brian">Brian</span> (2–1) <span class="player andrew">Andrew</span> — MP: 2–1</li>
+					<li>
+						Apr 22: <span class="player brian">Brian</span> (2–1) <span class="player andrew">Andrew</span> — MP: 2–1
+					</li>
 					<li>Apr 22: <span class="player ben">Ben</span> (2–1) <span class="player brian">Brian</span> — MP: 2–1</li>
 					<li>Apr 28: <span class="player andrew">Andrew</span> (2–1) <span class="player ben">Ben</span> — MP: 2–1</li>
-					<li>May 09: <span class="player jarrod">Jarrod</span> (2–0) <span class="player brian">Brian</span> — MP: 3–0</li>
-					<li>May 16: <span class="player andrew">Andrew</span> (2–1) <span class="player jarrod">Jarrod</span> — MP: 2–1</li>
+					<li>
+						May 09: <span class="player jarrod">Jarrod</span> (2–0) <span class="player brian">Brian</span> — MP: 3–0
+					</li>
+					<li>
+						May 16: <span class="player andrew">Andrew</span> (2–1) <span class="player jarrod">Jarrod</span> — MP: 2–1
+					</li>
 				</ul>
 				<h4>Round 1 Standings</h4>
 				<ol>
@@ -95,15 +137,23 @@
 				</ol>
 			</div>
 			<div class="done">
-				<h3>Round 2 — <small><em>May 16–Jul 04 (49 days)</em></small></h3>
+				<h3>
+					Round 2 — <small><em>May 16–Jul 04 (49 days)</em></small>
+				</h3>
 				<ul>
 					<li style="list-style-type: none;"><em>DATE: WINNER (RECORD) LOSER — POINTS</em></li>
 					<li style="list-style-type: none">&nbsp;</li>
 					<li>May 18: <span class="player brian">Brian</span> (2–0) <span class="player ben">Ben</span> — MP: 3–0</li>
-					<li>May 19: <span class="player jarrod">Jarrod</span> (2–1) <span class="player andrew">Andrew</span> — MP: 2–1</li>
+					<li>
+						May 19: <span class="player jarrod">Jarrod</span> (2–1) <span class="player andrew">Andrew</span> — MP: 2–1
+					</li>
 					<li>May 24: <span class="player andrew">Andrew</span> (2–1) <span class="player ben">Ben</span> — MP: 2–1</li>
-					<li>Jun 11: <span class="player andrew">Andrew</span> (2–0) <span class="player brian">Brian</span> — MP: 3–0</li>
-					<li>Jun 16: <span class="player brian">Brian</span> (2–1) <span class="player jarrod">Jarrod</span> — MP: 2–1</li>
+					<li>
+						Jun 11: <span class="player andrew">Andrew</span> (2–0) <span class="player brian">Brian</span> — MP: 3–0
+					</li>
+					<li>
+						Jun 16: <span class="player brian">Brian</span> (2–1) <span class="player jarrod">Jarrod</span> — MP: 2–1
+					</li>
 					<li>Jul 04: <span class="player jarrod">Jarrod</span> (2–0) <span class="player ben">Ben</span> — MP: 3–0</li>
 				</ul>
 				<h4>Round 2 Standings</h4>
@@ -117,16 +167,40 @@
 				</ol>
 			</div>
 			<div class="current">
-				<h3>Round 3 — <small><em>Jul 04– ... <script>document.write(`(${Math.floor((new Date() - new Date('Jul 04, 2025')) / (1000 * 60 * 60 * 24))} days...)`)</script></em></small></h3>
+				<h3>
+					Round 3 —
+					<small
+						><em
+							>Jul 04– ...
+							<script>
+								document.write(
+									`(${Math.floor((new Date() - new Date('Jul 04, 2025')) / (1000 * 60 * 60 * 24))} days...)`,
+								);
+							</script></em
+						></small
+					>
+				</h3>
 				<ul>
 					<li style="list-style-type: none;"><em>DATE: WINNER (RECORD) LOSER — POINTS</em></li>
 					<li style="list-style-type: none">&nbsp;</li>
-					<li>Jul 04: <span class="player andrew">Andrew</span> (2–0) <span class="player jarrod">Jarrod</span> — MP: 3–0</li>
-					<li>Jul 09: <span class="player brian">Brian</span> (2–1) <span class="player andrew">Andrew</span> — MP: 2–1</li>
+					<li>
+						Jul 04: <span class="player andrew">Andrew</span> (2–0) <span class="player jarrod">Jarrod</span> — MP: 3–0
+					</li>
+					<li>
+						Jul 09: <span class="player brian">Brian</span> (2–1) <span class="player andrew">Andrew</span> — MP: 2–1
+					</li>
 					<li>Aug 01: <span class="player brian">Brian</span> (2–1) <span class="player ben">Ben</span> — MP: 2–1</li>
-					<li>Aug 02: <span class="player jarrod">Jarrod</span> (2–0) <span class="player brian">Brian</span> — MP: 3–0</li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
+					<li>
+						Aug 02: <span class="player jarrod">Jarrod</span> (2–0) <span class="player brian">Brian</span> — MP: 3–0
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
 				</ul>
 				<h4>Round 3 Standings</h4>
 				<ol>
@@ -141,12 +215,31 @@
 			<div>
 				<h3>Round 4</h3>
 				<ul>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -164,16 +257,24 @@
 				</ol>
 			</div>
 			<div class="done">
-				<h3>Round 1 — <small><em>Jun 14–Aug 02 (49 days)</em></small></h3>
+				<h3>
+					Round 1 — <small><em>Jun 14–Aug 02 (49 days)</em></small>
+				</h3>
 				<ul>
 					<li style="list-style-type: none;"><em>DATE: WINNER (RECORD) LOSER — POINTS</em></li>
 					<li style="list-style-type: none">&nbsp;</li>
 					<li>Jun 14: <span class="player ben">Ben</span> (2–0) <span class="player andrew">Andrew</span> — MP: 3–0</li>
-					<li>Jun 23: <span class="player jarrod">Jarrod</span> (2–1) <span class="player andrew">Andrew</span> — MP: 2–1</li>
+					<li>
+						Jun 23: <span class="player jarrod">Jarrod</span> (2–1) <span class="player andrew">Andrew</span> — MP: 2–1
+					</li>
 					<li>Jul 04: <span class="player jarrod">Jarrod</span> (2–1) <span class="player ben">Ben</span> — MP: 2–1</li>
-					<li>Jul 04: <span class="player andrew">Andrew</span> (2–1) <span class="player brian">Brian</span> — MP: 2–1</li>
+					<li>
+						Jul 04: <span class="player andrew">Andrew</span> (2–1) <span class="player brian">Brian</span> — MP: 2–1
+					</li>
 					<li>Aug 01: <span class="player ben">Ben</span> (2–1) <span class="player brian">Brian</span> — MP: 2–1</li>
-					<li>Aug 02: <span class="player brian">Brian</span> (2–1) <span class="player jarrod">Jarrod</span> — MP: 2–1</li>
+					<li>
+						Aug 02: <span class="player brian">Brian</span> (2–1) <span class="player jarrod">Jarrod</span> — MP: 2–1
+					</li>
 				</ul>
 				<h4>Round 1 Standings</h4>
 				<ol>
@@ -186,14 +287,45 @@
 				</ol>
 			</div>
 			<div class="current">
-				<h3>Round 2 — <small><em>Aug 02– ... <script>document.write(`(${Math.floor((new Date() - new Date('Aug 02, 2025')) / (1000 * 60 * 60 * 24))} days...)`)</script></em></small></h3>
+				<h3>
+					Round 2 —
+					<small
+						><em
+							>Aug 02– ...
+							<script>
+								document.write(
+									`(${Math.floor((new Date() - new Date('Aug 02, 2025')) / (1000 * 60 * 60 * 24))} days...)`,
+								);
+							</script></em
+						></small
+					>
+				</h3>
 				<ul>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
 				</ul>
 				<h4>Round 2 Standings</h4>
 				<ol>
@@ -208,25 +340,219 @@
 			<div>
 				<h3>Round 3</h3>
 				<ul>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
 				</ul>
 			</div>
 			<div>
 				<h3>Round 4</h3>
 				<ul>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
-					<li class="todo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player jarrod">Jarrod</span></li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
 				</ul>
 			</div>
 		</div>
+		<div class="season">
+			<div>
+				<h2>Edge of Eternities (EOE)</h2>
+				<h3>Overall Standings</h3>
+				<ol>
+					<li style="list-style-type: none"><em>NAME (RECORD) — POINTS [PACKS]</em></li>
+					<li style="list-style-type: none">&nbsp;</li>
+					<li value="1"><span class="player andrew">Andrew</span> (0–0) — 0 MP</li>
+					<li><span class="player ben">Ben</span> (0–0) — 0 MP</li>
+					<li><span class="player brian">Brian</span> (0–0) — 0 MP</li>
+					<li><span class="player jarrod">Jarrod</span> (0–0) — 0 MP</li>
+				</ol>
+			</div>
+			<div class="current">
+				<h3>Round 1</h3>
+				<ul>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+				</ul>
+				<h4>Round 1 Standings</h4>
+				<ol>
+					<li style="list-style-type: none"><em>NAME (RECORD) — POINTS [PACKS]</em></li>
+					<li style="list-style-type: none">&nbsp;</li>
+					<li value="1"><span class="player andrew">Andrew</span> (0–0) — 0 MP</li>
+					<li><span class="player ben">Ben</span> (0–0) — 0 MP</li>
+					<li><span class="player brian">Brian</span> (0–0) — 0 MP</li>
+					<li><span class="player jarrod">Jarrod</span> (0–0) — 0 MP</li>
+				</ol>
+			</div>
+			<div>
+				<h3>Round 2</h3>
+				<ul>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Round 3</h3>
+				<ul>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Round 4</h3>
+				<ul>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player ben">Ben</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp; <span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="player andrew">Andrew</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player brian">Brian</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player ben">Ben</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+					<li class="todo">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="player brian">Brian</span> &nbsp;&nbsp;v&nbsp;&nbsp;
+						<span class="player jarrod">Jarrod</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+			document.querySelector('nav').addEventListener('click', (event) => {
+				if (event.target.matches('li')) {
+					document.querySelectorAll('nav li').forEach((li) => li.classList.remove('active'));
+					event.target.classList.add('active');
+
+					document.querySelectorAll('.season').forEach((season) => season.classList.remove('active'));
+					const seasonIdx = Array.from(event.target.parentNode.children).indexOf(event.target);
+					document.querySelectorAll('.season')[seasonIdx].classList.add('active');
+				}
+			});
+		</script>
 	</body>
 </html>
