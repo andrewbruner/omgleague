@@ -1,8 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+			crossorigin="anonymous"
+		/>
+
 		<style>
+			body {
+				font-family: 'Courier New', Courier, monospace;
+			}
+			.player {
+				font-size: 1em;
+				opacity: 0.5;
+				width: 5em;
+			}
+			.andrew {
+				background-color: var(--bs-danger);
+			}
+			.ben {
+				background-color: var(--bs-primary);
+			}
+			.brian {
+				background-color: var(--bs-warning);
+			}
+			.jarrod {
+				background-color: var(--bs-success);
+			}
+
+			.nav-link {
+				border: 1px solid var(--bs-primary-text-emphasis) !important;
+					color: var(--bs-primary-text-emphasis) !important;
+				padding: 0.25em 1em !important;
+			}
+			.nav-link.active {
+					background-color: var(--bs-primary-bg-subtle) !important;
+			}
+		</style>
+
+		<!--<style>
 			@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 			body {
 				/* font-family: Roboto, sans-serif; */
@@ -89,10 +130,766 @@
 					font-size: 1rem;
 				}
 			}
-		</style>
+		</style>-->
 	</head>
 	<body>
-		<h1>OMG League</h1>
+		<div class="container">
+			<!-- Page Heading-->
+			<h1 class="text-center mt-3">OMG League</h1>
+
+			<!-- Navigation -->
+			<nav class="nav nav-pills justify-content-center mb-3" id="pills-tab">
+				<button
+					class="nav-item nav-link rounded-pill mx-1 active"
+					id="pills-tdm-tab"
+					data-bs-toggle="pill"
+					data-bs-target="#pills-tdm"
+				>
+					TDM
+				</button>
+				<button
+					class="nav-item nav-link rounded-pill mx-1"
+					id="pills-fin-tab"
+					data-bs-toggle="pill"
+					data-bs-target="#pills-fin"
+				>
+					FIN
+				</button>
+				<button
+					class="nav-item nav-link rounded-pill mx-1"
+					id="pills-eoe-tab"
+					data-bs-toggle="pill"
+					data-bs-target="#pills-eoe"
+				>
+					EOE
+				</button>
+			</nav>
+
+			<div class="tab-content mb-3" id="pills-tabContent">
+				<!-- TDM -->
+				<div class="tab-pane fade show active" id="pills-tdm">
+					<h2 class="text-center">Tarkir: Dragonstorm (TDM)</h2>
+					<div class="accordion" id="accordion-tdm">
+						<!-- TDM Overall Standings -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-tdm-overall-standings"
+								>
+									Overall Standings
+								</button>
+							</h2>
+							<div
+								id="collapse-tdm-overall-standings"
+								class="accordion-collapse collapse show"
+								data-bs-parent="#accordion-tdm"
+							>
+								<div class="accordion-body">
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (5–3) — 15 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (4–4) — 13 MP [+1 packs]
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> (5–4) — 12 MP [+2 packs]
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> (2–5) — &nbsp;8 MP [+1 packs]
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- TDM Round 1 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-tdm-r1"
+								>
+									Round 1
+								</button>
+							</h2>
+							<div id="collapse-tdm-r1" class="accordion-collapse collapse" data-bs-parent="#accordion-tdm">
+								<div class="accordion-body">
+									<p>Apr 17–May 16 (29 days)</p>
+									<ul class="list-group list-group-flush mb-3">
+										<li class="list-group-item">
+											Apr 17 <span class="badge rounded-pill player ben">Ben</span> (2–0)
+											<span class="badge rounded-pill player jarrod">Jarrod</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											Apr 22 <span class="badge rounded-pill player brian">Brian</span> (2–1)
+											<span class="badge rounded-pill player andrew">Andrew</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Apr 22 <span class="badge rounded-pill player ben">Ben</span> (2–1)
+											<span class="badge rounded-pill player brian">Brian</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Apr 28 <span class="badge rounded-pill player andrew">Andrew</span> (2–1)
+											<span class="badge rounded-pill player ben">Ben</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											May 09 <span class="badge rounded-pill player jarrod">Jarrod</span> (2–0)
+											<span class="badge rounded-pill player brian">Brian</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											May 16 <span class="badge rounded-pill player andrew">Andrew</span> (2–1)
+											<span class="badge rounded-pill player jarrod">Jarrod</span> — MP 2–1
+										</li>
+									</ul>
+									<p>Round 1 Standings</p>
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item"><span class="badge rounded-pill player ben">Ben</span> (2–1) — 6 MP</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (2–1) — 5 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (1–2) — 4 MP [+1 pack]
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> (1–2) — 3 MP [+1 pack]
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- TDM Round 2 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-tdm-r2"
+								>
+									Round 2
+								</button>
+							</h2>
+							<div id="collapse-tdm-r2" class="accordion-collapse collapse" data-bs-parent="#accordion-tdm">
+								<div class="accordion-body">
+									<p>May 16–Jul 04 (49 days)</p>
+									<ul class="list-group list-group-flush mb-3">
+										<li class="list-group-item">
+											May 18 <span class="badge rounded-pill player brian">Brian</span> (2–0)
+											<span class="badge rounded-pill player ben">Ben</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											May 19 <span class="badge rounded-pill player jarrod">Jarrod</span> (2–1)
+											<span class="badge rounded-pill player andrew">Andrew</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											May 24 <span class="badge rounded-pill player andrew">Andrew</span> (2–1)
+											<span class="badge rounded-pill player ben">Ben</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Jun 11 <span class="badge rounded-pill player andrew">Andrew</span> (2–0)
+											<span class="badge rounded-pill player brian">Brian</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											Jun 16 <span class="badge rounded-pill player brian">Brian</span> (2–1)
+											<span class="badge rounded-pill player jarrod">Jarrod</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Jul 04 <span class="badge rounded-pill player jarrod">Jarrod</span> (2–0)
+											<span class="badge rounded-pill player ben">Ben</span> — MP 3–0
+										</li>
+									</ul>
+									<p>Round 2 Standings</p>
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (2–1) — 6 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (2–1) — 6 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> (2–1) — 5 MP [+1 pack]
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> (0–3) — 1 MP [+1 pack]
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- TDM Round 3 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-tdm-r3"
+								>
+									Round 3
+								</button>
+							</h2>
+							<div id="collapse-tdm-r3" class="accordion-collapse collapse show" data-bs-parent="#accordion-tdm">
+								<div class="accordion-body">
+									<p>
+										Jul 04– ...
+										<script>
+											document.write(
+												`(${Math.floor((new Date() - new Date('Jul 04, 2025')) / (1000 * 60 * 60 * 24))} days...)`,
+											);
+										</script>
+									</p>
+									<ul class="list-group list-group-flush mb-3">
+										<li class="list-group-item">
+											Jul 04 <span class="badge rounded-pill player andrew">Andrew</span> (2–0)
+											<span class="badge rounded-pill player jarrod">Jarrod</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											Jul 09 <span class="badge rounded-pill player brian">Brian</span> (2–1)
+											<span class="badge rounded-pill player andrew">Andrew</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Aug 01 <span class="badge rounded-pill player brian">Brian</span> (2–1)
+											<span class="badge rounded-pill player ben">Ben</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Aug 02 <span class="badge rounded-pill player jarrod">Jarrod</span> (2–0)
+											<span class="badge rounded-pill player brian">Brian</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+									<p>Round 3 Standings</p>
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> (2–1) — 4 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (1–1) — 4 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (1–1) — 3 MP
+										</li>
+										<li class="list-group-item"><span class="badge rounded-pill player ben">Ben</span> (0–1) — 1 MP</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- TDM Round 4 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-tdm-r4"
+								>
+									Round 4
+								</button>
+							</h2>
+							<div id="collapse-tdm-r4" class="accordion-collapse collapse" data-bs-parent="#accordion-tdm">
+								<div class="accordion-body">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- FIN -->
+				<div class="tab-pane fade" id="pills-fin">
+					<h2 class="text-center">Final Fantasy (FIN)</h2>
+					<div class="accordion" id="accordion-fin">
+						<!-- FIN Overall Standings -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-fin-overall-standings"
+								>
+									Overall Standings
+								</button>
+							</h2>
+							<div
+								id="collapse-fin-overall-standings"
+								class="accordion-collapse collapse show"
+								data-bs-parent="#accordion-fin"
+							>
+								<div class="accordion-body">
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (2–2) — 6 MP [+1 packs]
+										</li>
+										<li class="list-group-item"><span class="badge rounded-pill player ben">Ben</span> (2–1) — 6 MP</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (2–1) — 5 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> (1–3) — 4 MP [+1 packs]
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- FIN Round 1 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-fin-r1">
+									Round 1
+								</button>
+							</h2>
+							<div id="collapse-fin-r1" class="accordion-collapse collapse" data-bs-parent="#accordion-fin">
+								<div class="accordion-body">
+									<p>Jun 14–Aug 02 (49 days)</p>
+									<ul class="list-group list-group-flush mb-3">
+										<li class="list-group-item">
+											Jun 14 <span class="badge rounded-pill player ben">Ben</span> (2–0)
+											<span class="badge rounded-pill player andrew">Andrew</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											Jun 23 <span class="badge rounded-pill player jarrod">Jarrod</span> (2–1)
+											<span class="badge rounded-pill player andrew">Andrew</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Jul 04 <span class="badge rounded-pill player jarrod">Jarrod</span> (2–1)
+											<span class="badge rounded-pill player ben">Ben</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Jul 04 <span class="badge rounded-pill player andrew">Andrew</span> (2–1)
+											<span class="badge rounded-pill player brian">Brian</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Aug 01 <span class="badge rounded-pill player ben">Ben</span> (2–1)
+											<span class="badge rounded-pill player brian">Brian</span> — MP 2–1
+										</li>
+										<li class="list-group-item">
+											Aug 02 <span class="badge rounded-pill player brian">Brian</span> (2–1)
+											<span class="badge rounded-pill player jarrod">Jarrod</span> — MP 2–1
+										</li>
+									</ul>
+									<p>Round 1 Standings</p>
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item"><span class="badge rounded-pill player ben">Ben</span> (2–1) — 6 MP</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (2–1) — 5 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> (1–2) — 4 MP [+1 pack]
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (1–2) — 3 MP [+1 pack]
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- FIN Round 2 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse-fin-r2">
+									Round 2
+								</button>
+							</h2>
+							<div id="collapse-fin-r2" class="accordion-collapse collapse show" data-bs-parent="#accordion-fin">
+								<div class="accordion-body">
+									<p>
+										Aug 02– ...
+										<script>
+											document.write(
+												`(${Math.floor((new Date() - new Date('Aug 02, 2025')) / (1000 * 60 * 60 * 24))} days...)`,
+											);
+										</script>
+									</p>
+									<ul class="list-group list-group-flush mb-3">
+										<li class="list-group-item">
+											Aug 08 <span class="badge rounded-pill player andrew">Andrew</span> (2–0)
+											<span class="badge rounded-pill player brian">Brian</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+									<p>Round 2 Standings</p>
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (1–0) — 3 MP
+										</li>
+										<li class="list-group-item"><span class="badge rounded-pill player ben">Ben</span> (0–0) — 0 MP</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (0–0) — 0 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> (0–1) — 0 MP
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- FIN Round 3 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-fin-r3">
+									Round 3
+								</button>
+							</h2>
+							<div id="collapse-fin-r3" class="accordion-collapse collapse" data-bs-parent="#accordion-fin">
+								<div class="accordion-body">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- FIN Round 4 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-fin-r4">
+									Round 4
+								</button>
+							</h2>
+							<div id="collapse-fin-r4" class="accordion-collapse collapse" data-bs-parent="#accordion-fin">
+								<div class="accordion-body">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- EOE -->
+				<div class="tab-pane fade" id="pills-eoe">
+					<h2 class="text-center">Edge of Eternities</h2>
+					<div class="accordion" id="accordion-eoe">
+						<!-- EOE Overall Standings -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-eoe-overall-standings"
+								>
+									Overall Standings
+								</button>
+							</h2>
+							<div
+								id="collapse-eoe-overall-standings"
+								class="accordion-collapse collapse show"
+								data-bs-parent="#accordion-eoe"
+							>
+								<div class="accordion-body">
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (1–0) — 3 MP
+										</li>
+										<li class="list-group-item"><span class="badge rounded-pill player ben">Ben</span> (0–0) — 0 MP</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (0–0) — 0 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> (0–1) — 0 MP
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- EOE Round 1 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse-eoe-r1">
+									Round 1
+								</button>
+							</h2>
+							<div id="collapse-eoe-r1" class="accordion-collapse collapse show" data-bs-parent="#accordion-eoe">
+								<div class="accordion-body">
+									<p>
+										Aug 08– ...
+										<script>
+											document.write(
+												`(${Math.floor((new Date() - new Date('Aug 08, 2025')) / (1000 * 60 * 60 * 24))} days...)`,
+											);
+										</script>
+									</p>
+									<ul class="list-group list-group-flush mb-3">
+										<li class="list-group-item">
+											Aug 08 <span class="badge rounded-pill player andrew">Andrew</span> (2–0)
+											<span class="badge rounded-pill player brian">Brian</span> — MP 3–0
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+									<p>Round 1 Standings</p>
+									<ol class="list-group list-group-flush list-group-numbered">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> (1–0) — 3 MP
+										</li>
+										<li class="list-group-item"><span class="badge rounded-pill player ben">Ben</span> (0–0) — 0 MP</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player jarrod">Jarrod</span> (0–0) — 0 MP
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">BBrianen</span> (0–1) — 0 MP
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<!-- EOE Round 2 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-eoe-r2"
+								>
+									Round 2
+								</button>
+							</h2>
+							<div id="collapse-eoe-r2" class="accordion-collapse collapse" data-bs-parent="#accordion-eoe">
+								<div class="accordion-body">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- EOE Round 3 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-eoe-r3"
+								>
+									Round 3
+								</button>
+							</h2>
+							<div id="collapse-eoe-r3" class="accordion-collapse collapse" data-bs-parent="#accordion-eoe">
+								<div class="accordion-body">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- EOE Round 4 -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-eoe-r4"
+								>
+									Round 4
+								</button>
+							</h2>
+							<div id="collapse-eoe-r4" class="accordion-collapse collapse" data-bs-parent="#accordion-eoe">
+								<div class="accordion-body">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player ben">Ben</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player andrew">Andrew</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player brian">Brian</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player ben">Ben</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+										<li class="list-group-item">
+											<span class="badge rounded-pill player brian">Brian</span> v
+											<span class="badge rounded-pill player jarrod">Jarrod</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+			integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+			crossorigin="anonymous"
+		></script>
+
+		<!--<h1>OMG League</h1>
 		<nav>
 			<ul>
 				<li class="active">TDM</li>
@@ -578,6 +1375,6 @@
 					document.querySelectorAll('.season')[seasonIdx].classList.add('active');
 				}
 			});
-		</script>
+		</script>-->
 	</body>
 </html>
