@@ -213,7 +213,7 @@
 									get roundDates() {
 										let dates = { start: null, end: null, length: null }; // future round
 
-										if (matches[0].date) {
+										if (matches[0].date || rounds[r - 1]?.matches.at(-1).date) {
 											// past or current round
 											let start;
 											if (r < 1) {
@@ -528,7 +528,7 @@
 							let seasonRounds = document.createElement('section');
 
 							// a. Season Round(s) <section> ...
-							season.rounds.forEach((round, idx) => {
+							season.rounds.forEach((round, idx, rounds) => {
 								let seasonRound = document.createElement('section');
 								if (round.matches[0].date) {
 									if (round.matches.at(-1).date) {
@@ -549,7 +549,7 @@
 								// - Round Dates <h3>
 								let roundDates = document.createElement('h3');
 								let dates = round.roundDates;
-								if (round.matches.some((match) => match.date)) {
+								if (round.matches.some((match) => match.date) || rounds[idx - 1]?.matches.every((match) => match.date)) {
 									if (round.matches.every((match) => match.date)) {
 										roundDates.textContent = `${dates.start} - ${dates.end} (${dates.length} days)`;
 									} else {
