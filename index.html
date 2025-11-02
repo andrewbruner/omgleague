@@ -233,7 +233,7 @@
 												end = new Date().toLocaleDateString('en-US', { month: 'short', day: '2-digit' }); // today's date
 											}
 
-											let length = Math.floor(new Date(end) - new Date(start)) / (1000 * 60 * 60 * 24); // length in days
+											let length = Math.floor(Math.floor(new Date(end) - new Date(start)) / (1000 * 60 * 60 * 24)); // length in days
 											dates = { start, end, length };
 										}
 
